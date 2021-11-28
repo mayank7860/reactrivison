@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Wishmessage from "./components/wish/Wishmessage";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { store } from "./redux/Store";
+import { Provider } from "react-redux";
 
-function App() {
+let App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <nav className="nav navbar-dark bg-dark">
+        <a href="/">React Redux Rxample</a>
+      </nav>
+      <Provider store={store}>
+        <Wishmessage />
+      </Provider>
+    </React.Fragment>
   );
-}
-
+};
 export default App;
